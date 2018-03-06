@@ -31,8 +31,6 @@ void main()
 	int x,y;//记录初始2个方块的位置
 	initgraph(640,480);
 	srand( (unsigned)time(NULL));//
-	mciSendString("open 1.mp3 alias mymusic", NULL, 0, NULL);
-	mciSendString("play mymusic", NULL, 0, NULL);//播放音乐
 	background();
 	background1(); //开始界面 
 	start();
@@ -189,7 +187,7 @@ void start()
 
 void background()
 {
-loadimage(NULL, "C:\\Users\\ZMC\\Desktop\\2048\\8.jpg",640,480);
+loadimage(NULL, "C:\\Users\\meng\\Desktop\\2048\\2048\\8.jpg",640,480);
 Sleep(3000);
 }
 
@@ -208,30 +206,30 @@ void background1()
 void background2()
 {
 	cleardevice();
-	setbkcolor(RGB(255,240,245));
-	cleardevice();
-	setlinecolor(RGB(205,193,197));
+	loadimage(NULL, "C:\\Users\\meng\\Desktop\\2048\\2048\\10.jpg",660,510);
+	setlinecolor(WHITE);
 	setlinestyle(PS_SOLID | PS_JOIN_BEVEL, 10);
 	for(int i=0;i<=4;i++)
 	{line(50+100*i,50,50+100*i,450);}
 	for(int j=0;j<=4;j++)
 	{line(50,50+100*j,450,50+100*j);}
+	for(int x=0;x<=30;x++)
+	{line(0,x,640,x);}
 	settextcolor(RGB(244,164,96));
 	setfont(40,0,"华文行楷");
-	outtextxy(450, 150, "q:结束游戏");
-	outtextxy(450, 200, "w:上移");
-	outtextxy(450, 250, "s:下移");
-	outtextxy(450, 300, "a:左移");
-	outtextxy(450, 350, "d:右移");
-	outtextxy(450,100,"分数:");
+	outtextxy(460, 150, "q:结束游戏");
+	outtextxy(460, 200, "w:上移");
+	outtextxy(460, 250, "s:下移");
+	outtextxy(460, 300, "a:左移");
+	outtextxy(460, 350, "d:右移");
+	outtextxy(460,100,"分数:");
 }
 
 
 void background3()
 {
 	cleardevice();
-	setbkcolor(RGB(192,192,192));
-	cleardevice();
+	loadimage(NULL, "C:\\Users\\meng\\Desktop\\2048\\2048\\10.jpg",660,510);
     settextcolor(RGB(255,160,122));
 	outtextxy(240,100, "w:上移");
 	outtextxy(240,150, "s:下移");
@@ -1388,12 +1386,12 @@ void control2(int *s)
 void end()
 {
     cleardevice();
-	loadimage(NULL, "C:\\Users\\ZMC\\Desktop\\2048\\2.jpg", 640, 480);
+	loadimage(NULL, "C:\\Users\\meng\\Desktop\\2048\\2048\\2.jpg", 640,510);
 	settextcolor(WHITE);
 	setfont(100,0,"华文行楷"); 
 	char sco[100];
 	sprintf(sco,"%d",score-10);
-	outtextxy(120, 40, "分数");
-	outtextxy(320,40,sco);
+	outtextxy(150,150, "分数");
+	outtextxy(350,150,sco);
 	Sleep(6000);
 }//结束界面
